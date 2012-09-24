@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C84FFF1-2B72-440F-A36D-7D411CF7AE61}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DelphiProjectHandler</RootNamespace>
+    <AssemblyName>DelphiProjectHandler</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Controller\FixProjectSettingsController.cs" />
+    <Compile Include="src\Controller\FixUnitActionsController.cs" />
+    <Compile Include="src\Controller\FixUnitSettingsController.cs" />
+    <Compile Include="src\Controller\IFixProjectSettingsController.cs" />
+    <Compile Include="src\Controller\IFixProjectActionsController.cs" />
+    <Compile Include="src\Controller\FixProjectActionsController.cs" />
+    <Compile Include="src\Controller\IFixUnitActionsController.cs" />
+    <Compile Include="src\Controller\IFixUnitSettingsController.cs" />
+    <Compile Include="src\Controller\IProjectBulkOperationController.cs" />
+    <Compile Include="src\Controller\IUnitCleanupActionsController.cs" />
+    <Compile Include="src\Controller\ILibraryPathSettingsController.cs" />
+    <Compile Include="src\Controller\IUnitCleanupSettingsController.cs" />
+    <Compile Include="src\Controller\LibraryPathSettingsController.cs" />
+    <Compile Include="src\Controller\ProjectBulkOperationController.cs" />
+    <Compile Include="src\Controller\UnitCleanupActionsController.cs" />
+    <Compile Include="src\Controller\UnitCleanupSettingsController.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\Specialized\DprFilesSelector.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\Specialized\XmlFileSelector.cs" />
+    <Compile Include="src\IcarusAnalyzerReportParser.cs" />
+    <Compile Include="src\Model\ProjectBulkOperations.cs" />
+    <Compile Include="src\Model\FixProjectSettings.cs" />
+    <Compile Include="src\Model\FixUnitSettings.cs" />
+    <Compile Include="src\Model\IFixProjectSettings.cs" />
+    <Compile Include="src\Model\IFixUnitSettings.cs" />
+    <Compile Include="src\Model\ILibraryPathSettings.cs" />
+    <Compile Include="src\Model\IUnitCleanupSettings.cs" />
+    <Compile Include="src\Model\LibraryPathSettings.cs" />
+    <Compile Include="src\Model\UnitCleanupSettings.cs" />
+    <Compile Include="src\Operations\ProjectBulkOperationLoader.cs" />
+    <Compile Include="src\Operations\DelphiFileAgent.cs" />
+    <Compile Include="src\Operations\IDelphiFileAgent.cs" />
+    <Compile Include="src\Operations\IDelphiFileOperation.cs" />
+    <Compile Include="src\Operations\IOperationState.cs" />
+    <Compile Include="src\Operations\IUnitItemBuilder.cs" />
+    <Compile Include="src\Operations\Projects\AbstractDelphiProjectOperation.cs" />
+    <Compile Include="src\Operations\Projects\IProjectOperationSettings.cs" />
+    <Compile Include="src\Operations\Projects\IProjectOperationState.cs" />
+    <Compile Include="src\Operations\Projects\ProjectOperationSettings.cs" />
+    <Compile Include="src\Operations\Projects\ProjectOperationState.cs" />
+    <Compile Include="src\Operations\Projects\ProjectUnitItemBuilder.cs" />
+    <Compile Include="src\Operations\Units\AbstractDelphiUnitOperation.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitAddOperation.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitCleanerOperation.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitItemBuilder.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitOperationSettings.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitOperationState.cs" />
+    <Compile Include="src\Operations\Units\DelphiUnitUsesOperation.cs" />
+    <Compile Include="src\Operations\Units\IDelphiUnitOperation.cs" />
+    <Compile Include="src\Operations\DelphiUnitAgent.cs" />
+    <Compile Include="src\Operations\FileModifierAgent.cs" />
+    <Compile Include="src\Operations\Units\IDelphiUnitOperationSettings.cs" />
+    <Compile Include="src\Operations\Units\IDelphiUnitOperationState.cs" />
+    <Compile Include="src\Operations\Uses\AbstractUsesListOperation.cs" />
+    <Compile Include="src\Operations\Uses\IUsesListOperation.cs" />
+    <Compile Include="src\Operations\Uses\IUsesListOperationSettings.cs" />
+    <Compile Include="src\Operations\Uses\IUsesListOperationState.cs" />
+    <Compile Include="src\Operations\Uses\UsesListAddOperation.cs" />
+    <Compile Include="src\Operations\Uses\UsesListDeleteOperation.cs" />
+    <Compile Include="src\Operations\Uses\UsesListFixFormOperation.cs" />
+    <Compile Include="src\Operations\Uses\UsesListFixPathOperation.cs" />
+    <Compile Include="src\Operations\Uses\UsesListOperationSettings.cs" />
+    <Compile Include="src\Operations\Uses\UsesListOperationState.cs" />
+    <Compile Include="src\SuggestedUnitStructure.cs" />
+    <Compile Include="src\UnitStructure.cs" />
+    <Compile Include="src\SuggestedUnitStructureList.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\FilesSelector.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\FilesSelectorOptions.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\FolderFilesImporter.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\IFilesSelector.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\IFolderFilesImporter.cs" />
+    <Compile Include="src\Utils\ICollectionUtils.cs" />
+    <Compile Include="src\Utils\ListUtils.cs" />
+    <Compile Include="src\Dialogs\FileSelectors\Specialized\PasFilesSelector.cs" />
+    <Compile Include="src\Utils\PathUtilsClass.cs" />
+    <Compile Include="src\Utils\StringListUtils.cs" />
+    <Compile Include="src\LibraryPaths\ClipboardLibraryPathsProvider.cs" />
+    <Compile Include="src\LibraryPaths\DelphiLibraryPathsProvider.cs" />
+    <Compile Include="src\LibraryPaths\DelphiLibraryPathsBuilder.cs" />
+    <Compile Include="src\LibraryPaths\DelphiRegistryKeys.cs" />
+    <Compile Include="src\LibraryPaths\LibraryPathsProviderFactory.cs" />
+    <Compile Include="src\LibraryPaths\LibraryPathsBuilderInterface.cs" />
+    <Compile Include="src\LibraryPaths\LibraryPathsProviderInterface.cs" />
+    <Compile Include="src\Operations\Projects\DelphiProjectFixFormsOperation.cs" />
+    <Compile Include="src\Operations\Projects\DelphiProjectFixPathsOperation.cs" />
+    <Compile Include="src\Operations\DelphiOperation.cs" />
+    <Compile Include="src\Operations\Projects\DelphiProjectRemoveUnitsOperation.cs" />
+    <Compile Include="src\Utils\TextBoxUtils.cs" />
+    <Compile Include="src\View\FormDelphiProjectManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\FormDelphiProjectManager.Designer.cs">
+      <DependentUpon>FormDelphiProjectManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Operations\Projects\DelphiProjectAddUnitOperation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\View\IFixProjectSettingsView.cs" />
+    <Compile Include="src\View\IFixUnitSettingsView.cs" />
+    <Compile Include="src\View\ILibraryPathSettingsView.cs" />
+    <Compile Include="src\View\IUnitCleanupSettingsView.cs" />
+    <EmbeddedResource Include="src\View\FormDelphiProjectManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDelphiProjectManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="src\Utils\RelativePathClass.cs" />
+    <Compile Include="src\SourceControl\SourceOffsiteClass.cs" />
+    <Compile Include="src\UnitFormReaderClass.cs" />
+    <Compile Include="src\UnitListClass.cs" />
+    <Compile Include="src\UsesClauseReaderClass.cs" />
+    <Compile Include="src\UnitItemClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
